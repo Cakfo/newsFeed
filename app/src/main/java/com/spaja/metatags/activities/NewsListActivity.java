@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.spaja.metatags.R;
 import com.spaja.metatags.adapters.NewsAdapter;
-import com.spaja.metatags.classes.GetMetaDataFromUrl;
 import com.spaja.metatags.model.ResponseData;
 import com.spaja.metatags.networking.NewsAPI;
 
@@ -19,7 +18,7 @@ public class NewsListActivity extends AppCompatActivity {
 
     private NewsAdapter newsAdapter;
     private RecyclerView newsRecycler;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +64,6 @@ public class NewsListActivity extends AppCompatActivity {
                 int i = 0;
             }
         });
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        new GetMetaDataFromUrl(this, null).cancel(true);
     }
 
     @Override

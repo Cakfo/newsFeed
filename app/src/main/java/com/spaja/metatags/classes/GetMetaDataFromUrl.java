@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.spaja.metatags.activities.NewsListActivity;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -49,10 +50,12 @@ public class GetMetaDataFromUrl extends AsyncTask<String, Void, Void> {
     @Override
     public void onPostExecute(Void aVoid) {
 
-        if (image != null) {
+        if (image != null && !mActivity.isDestroyed()) {
             Glide.with(mActivity)
                     .load(image.attr("content"))
                     .into(newsImage);
+        } else if (mActivity.isDestroyed()) {
+            Glide.clear(newsImage);
         }
     }
 }

@@ -11,37 +11,37 @@ import java.util.List;
 
 public class Channel {
 
-    @Element (required = false)
+    @Element(required = false)
     private String pubDate;
 
-    @Element (required = false)
+    @Element(required = false)
     private String description;
 
-    @Element (required = false)
+    @Element(required = false)
     private String link;
 
-    @Element (required = false)
+    @Element(required = false)
     private String lastBuildDate;
 
-    @ElementList (inline = true)
+    @ElementList(inline = true)
     private List<Item> item;
 
-    @Element (required = false)
+    @Element(required = false)
     private String generator;
 
-    @Element (required = false)
+    @Element(required = false)
     private String language;
 
-    @Element (required = false)
+    @Element(required = false)
     private String copyright;
 
-    @Element (required = false)
+    @Element(required = false)
     private String webMaster;
 
     @Element(name = "title")
     private String title;
 
-    @Element (name = "image")
+    @Element(name = "image")
     private ImageElement image;
 
 
