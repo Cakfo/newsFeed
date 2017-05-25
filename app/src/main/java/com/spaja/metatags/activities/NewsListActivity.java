@@ -18,7 +18,7 @@ public class NewsListActivity extends AppCompatActivity {
 
     private NewsAdapter newsAdapter;
     private RecyclerView newsRecycler;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +50,7 @@ public class NewsListActivity extends AppCompatActivity {
 
     private void getNewsList(String query) {
 
-        NewsAPI.service.getNewsData(query, "rss").enqueue(new Callback<ResponseData>() {
+        NewsAPI.service.getNewsData(query, "rss", "fr").enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
 

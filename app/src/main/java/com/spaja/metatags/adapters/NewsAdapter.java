@@ -38,7 +38,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        holder.newsTitle.setText(mDataSet.getChannel().getNewsList().get(position).getTitle().split(" - ")[0]);
+        holder.newsTitle.setText(mDataSet.getChannel().getNewsList().get(position).getTitle());
 
         String url = mDataSet.getChannel().getNewsList().get(position).getLink().split("url=")[1];
         GetMetaDataFromUrl worker = new GetMetaDataFromUrl(mActivity, holder.newsImage);
